@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薪火赓续 · 逐光前行 | 校新闻宣传中心换届欢送会邀请函</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimSun", sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            padding: 20px 15px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 星光飘落动画 */
+        .star {
+            position: fixed;
+            z-index: -1;
+            color: #990000;
+            opacity: 0.6;
+            animation: starFall linear infinite;
+        }
+
+        @keyframes starFall {
+            0% {
+                transform: translateY(-10px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* 信封封面 */
+        .envelope {
+            width: 100%;
+            max-width: 800px;
+            height: 420px;
+            background: linear-gradient(135deg, #990000, #b32424);
+            margin: 0 auto;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 30px rgba(153, 0, 0, 0.25);
+            transition: all 0.8s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .envelope::after {
+            content: "";
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .envelope h2 {
+            color: #fff;
+            font-size: 28px;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+
+        .envelope p {
+            color: #f8dede;
+            font-size: 16px;
+        }
+
+        .envelope.open {
+            height: 0;
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(1.02);
+        }
+
+        /* 邀请函主体 */
+        .invite-box {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fffefb;
+            background-image: radial-gradient(#99000012 1px, transparent 1px);
+            background-size: 25px 25px;
+            padding: 50px 45px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(60, 20, 20, 0.08);
+            border-top: 8px solid #990000;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        .invite-box.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .school-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .school-logo img {
+            width: 120px;
+            transition: all 0.4s ease;
+        }
+
+        .school-logo img:hover {
+            filter: drop-shadow(0 0 12px #990000);
+            transform: scale(1.05);
+        }
+
+        .slogan {
+            text-align: center;
+            color: #990000;
+            font-size: 17px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 32px;
+            color: #990000;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 35px;
+        }
+
+        .line-decor {
+            text-align: center;
+            color: #990000;
+            margin: 25px 0;
+            letter-spacing: 8px;
+        }
+
+        .content-text {
+            font-size: 16px;
+            line-height: 2.1;
+            color: #333;
+            text-indent: 2em;
+            margin-bottom: 18px;
+        }
+
+        .info-block {
+            margin: 40px 0;
+            padding: 25px 30px;
+            background: #fdf4f4;
+            border-radius: 12px;
+            border-left: 5px solid #990000;
+        }
+
+        .info-item {
+            font-size: 16px;
+            line-height: 2.2;
+            color: #222;
+        }
+
+        .countdown {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #990000, #b32424);
+            color: #fff;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-size: 17px;
+        }
+
+        .sign-area {
+            margin-top: 50px;
+            text-align: right;
+            line-height: 2;
+        }
+
+        .sign-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: #222;
+        }
+
+        .sign-date {
+            font-size: 15px;
+            color: #666;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* 入场动画 */
+        .fade-item {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 适配手机 */
+        @media (max-width: 600px) {
+            .invite-box {
+                padding: 30px 20px;
+            }
+            .main-title {
+                font-size: 24px;
+            }
+            .envelope h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 飘落星光容器 -->
+    <script>
+        // 生成飘落星光
+        for(let i = 0; i < 25; i++){
+            let star = document.createElement('div');
+            star.className = 'star';
+            star.innerHTML = '✦';
+            star.style.left = Math.random()*100+'%';
+            star.style.animationDuration = (Math.random()*6+4)+'s';
+            star.style.animationDelay = Math.random()*5+'s';
+            document.body.appendChild(star);
+        }
+    </script>
+
+    <!-- 信封封面 -->
+    <div class="envelope" id="env">
+        <h2>诚挚邀请 · 共赴新程</h2>
+        <p>点击开启邀请函</p>
+    </div>
+
+    <!-- 邀请函内容 -->
+    <div class="invite-box" id="invite">
+        <div class="school-logo">
+            <img src="https://img0.baidu.com/it/u=1297133223,2879336239&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt="西南财经大学天府学院校徽">
+        </div>
+
+        <p class="slogan">镜头藏岁月 · 笔墨赴新程</p>
+        <h1 class="main-title">邀请函</h1>
+        <p class="sub-title">西南财经大学天府学院 · 校新闻宣传中心换届欢送会</p>
+
+        <div class="line-decor">📷 ✦ 🎙️ ✦ 📝</div>
+
+        <p class="content-text fade-item">
+            尊敬的各位指导老师、各学生组织负责人、中心全体成员：
+        </p>
+        <p class="content-text fade-item">
+            时序更迭，岁岁薪传。回望朝夕相伴的宣传时光，往届学生干部以镜头为眼、以文字为翼、以热爱为炬，扎根校园宣传一线，记录校园百态，传播天府声音，为学校文化建设与新媒体宣传工作默默耕耘、倾情奉献，用热忱与坚守书写了属于校宣人的独家青春答卷。
+        </p>
+        <p class="content-text fade-item">
+            为致敬离任干部的赤诚付出，感谢每一份默默坚守，传承宣传初心与使命，顺利完成团队薪火交接，校新闻宣传中心特举办本次换届欢送会。以此告别旧岁耕耘，迎接崭新征程，愿初心不改，薪火永续。
+        </p>
+        <p class="content-text fade-item">
+            特此诚挚邀您拨冗莅临，共叙青春岁月，见证薪火相传，奔赴下一程山海繁花。
+        </p>
+
+        <!-- 动态倒计时 -->
+        <div class="countdown" id="countdown">
+            距离欢送会开启：计算中...
+        </div>
+
+        <!-- 活动信息 -->
+        <div class="info-block fade-item">
+            <div class="info-item"><strong>活动主题：</strong>薪火赓续，逐光前行</div>
+            <div class="info-item"><strong>活动时间：</strong>2026年06月30日 19:00</div>
+            <div class="info-item"><strong>活动地点：</strong>学校第一教学楼1204</div>
+            <div class="info-item"><strong>主办单位：</strong>西南财经大学天府学院校新闻宣传中心</div>
+            <div class="info-item"><strong>联系人：</strong>综合办公室陈志岩</div>
+        </div>
+
+        <div class="line-decor">✦ ✦ ✦</div>
+
+        <div class="sign-area fade-item">
+            <p class="sign-name">西南财经大学天府学院校新闻宣传中心</p>
+            <p class="sign-date">二〇二六年六月</p>
+        </div>
+
+        <div class="footer">
+            以光影致青春 · 以笔墨赴新程
+        </div>
+    </div>
+
+    <script>
+        // 信封展开动画
+        const env = document.getElementById('env');
+        const invite = document.getElementById('invite');
+        env.onclick = function(){
+            env.classList.add('open');
+            setTimeout(()=>{
+                invite.classList.add('show');
+                // 逐段渐入
+                let items = document.querySelectorAll('.fade-item');
+                items.forEach((el,idx)=>{
+                    el.style.animation = `fadeUp 0.8s ease ${idx*0.15}s forwards`;
+                })
+            },400);
+        }
+
+        // 倒计时功能
+        function countdown(){
+            let target = new Date("2026-06-30 19:00:00").getTime();
+            let now = Date.now();
+            let diff = target - now;
+            if(diff <= 0){
+                document.getElementById("countdown").innerText = "欢送会已圆满开启 ✦";
+                return;
+            }
+            let d = Math.floor(diff/(1000*60*60*24));
+            let h = Math.floor((diff/(1000*60*60))%24);
+            let m = Math.floor((diff/(1000*60))%60);
+            let s = Math.floor((diff/1000)%60);
+            document.getElementById("countdown").innerText = `距离欢送会开启：${d}天 ${h}时 ${m}分 ${s}秒`;
+        }
+        countdown();
+        setInterval(countdown,1000);
+    </script>
+
+</body>
+</html>
